@@ -1,6 +1,8 @@
 # Digital Clock on FPGA,
 This project implements a digital clock on an FPGA using Verilog. 
+
 The clock displays time in HH:MM:SS format using 7-segment displays and includes buttons for resetting and incrementing minutes.
+
 It also demonstrates how to debounce button inputs and control display multiplexing.
 
 # Features
@@ -29,15 +31,22 @@ debounce: Debounces the button inputs to avoid false triggers.
 
 # Inputs
 Name	       Type	     Description
+
 clk	         Input	   Main FPGA clock signal
+
 sw[0]	       Input	   Enable switch for the clock
+
 button_C	   Input	   Reset button (clears the clock)
+
 button_M	   Input	   Minute increment button
 
 # Outputs
 Name	       Type	     Description
+
 seg[6:0]	   Output	   Segments for 7-segment displays
+
 enanble	     Output	   Enables for each 7-segment digit
+
 LED[7:0]	   Output	   Displays current seconds in binary
 
 # Usage
