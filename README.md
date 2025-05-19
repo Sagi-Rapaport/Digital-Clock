@@ -1,4 +1,4 @@
-# Digital Clock on FPGA,
+# Digital Clock on FPGA
 This project implements a digital clock on an FPGA using Verilog. 
 
 The clock displays time in HH:MM:SS format using 7-segment displays and includes buttons for resetting and incrementing minutes.
@@ -54,15 +54,15 @@ Load the Verilog code into your FPGA development environment (e.g., Vivado, Quar
 
 Connect appropriate hardware:
 
-Clock input.
+- Clock input.
 
-Two buttons for reset and minute increment.
+- Two buttons for reset and minute increment.
 
-One switch for clock enable.
+- One switch for clock enable.
 
-6-digit 7-segment display.
+- 6-digit 7-segment display.
 
-8 LEDs for displaying seconds.
+- 8 LEDs for displaying seconds.
 
 Program the FPGA and observe the working clock.
 
