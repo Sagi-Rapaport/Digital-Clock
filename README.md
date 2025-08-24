@@ -17,31 +17,31 @@ The clock displays time in HH:MM:SS format using 7-segment displays and includes
 - Seconds output mirrored on LEDs for debugging or visual aid.
 
 # File Structure
-Digital_Clock: The top-level module connecting all components.
+- Digital_Clock: The top-level module connecting all components.
 
-debounce: Debounces the button inputs to avoid false triggers. (including slow_clock_4Hz and D_FF modules)
+- debounce: Debounces the button inputs to avoid false triggers. (including slow_clock_4Hz and D_FF modules)
 
-counter_and_display: Handles the internal timekeeping logic and responsible for presenting it through binary_to_BCD and decoder_7_segment modules.
+- counter_and_display: Handles the internal timekeeping logic and responsible for presenting it through binary_to_BCD and decoder_7_segment modules.
 
 # Inputs
 Name  <--->   Description
 
 
-clk	 <--->	  Main FPGA clock signal (50 MHz)
+- clk	 <--->	  Main FPGA clock signal (50 MHz)
 
-SW_0  <--->	  Enable switch for the clock
+- SW_0  <--->	  Enable switch for the clock
 
-button_C  <--->	 Reset button (clears the clock)
+- button_C  <--->	 Reset button (clears the clock)
 
-button_M	<--->   Minute increment button
+- button_M	<--->   Minute increment button
 
 # Outputs
 Name  <--->	  Description
 
 
-seg0[6:0], seg1[6:0], seg2[6:0], seg3[6:0], seg4[6:0], seg5[6:0]	 <--->  Segments for 7-segment displays (seg0[6:0] - right digit, seg5[6:0] - left digit)
+- seg0[6:0], seg1[6:0], seg2[6:0], seg3[6:0], seg4[6:0], seg5[6:0]	 <--->  Segments for 7-segment displays (seg0[6:0] - right digit, seg5[6:0] - left digit)
 
-LED[7:0]	 <--->	 Displays current seconds with LEDs (LED[3:0] : 0-9 in binary, LED[4] : 10, LED[5] : 20, LED[6] : 30, LED[7] : OFF- max 59 seconds in clock)
+- LED[7:0]	 <--->	 Displays current seconds with LEDs (LED[3:0] : 0-9 in binary, LED[4] : 10, LED[5] : 20, LED[6] : 30, LED[7] : OFF- max 59 seconds in clock)
 
 # Usage
 Load the SystemVerilog code into your FPGA development environment (e.g., Vivado, Quartus).
@@ -61,10 +61,10 @@ Connect appropriate hardware:
 Program the FPGA and observe the working Digital_Clock.
 
 # Notes
-The debounce module is essential for reliable button behavior.
+- The debounce module is essential for reliable button behavior.
 
-Time is updated every second; hour overflow is handled internally.
+- Time is updated every second; hour overflow is handled internally.
 
-For FPGAs that have connection between all the 7-segments, there is option to utilize FSM and Multiplexing in the code.
+- For FPGAs that have connection between all the 7-segments, there is option to utilize FSM and Multiplexing in the code.
 
-The project can be extended to include alarms, time setting modes, or 12-hour/24-hour format switching.
+- The project can be extended to include alarms, time setting modes, or 12-hour/24-hour format switching.
